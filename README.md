@@ -9,7 +9,7 @@
 ### About
 
 This repo provides minimum setup required for setting up single/multiple file upload routes. <br>
-You can read blog version of it <a>here</a>.
+You can read blog version of it <a href="https://rugved-bongale.medium.com/how-to-upload-image-using-multer-in-node-js-f3aeffb90657">here</a>.
 
 ------------------------------------------
 ### Installation
