@@ -1,8 +1,10 @@
 var express = require('express')
 var multer  = require('multer')
 var port = 3000;
+var cors = require('cors')
 
 var app = express()
+app.use(cors())
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
