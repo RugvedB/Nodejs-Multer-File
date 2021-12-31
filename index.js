@@ -33,6 +33,9 @@ app.post('/profile-upload-single', upload.single('profile-file'), function (req,
   response += `<img src="${req.file.path}" /><br>`
   return res.send(response)
 })
+app.get('/up', function (req, res) {
+  res.send('hello world')
+})
 
 app.post('/profile-upload-multiple', upload.array('profile-files', 12), function (req, res, next) {
     // req.files is array of `profile-files` files
