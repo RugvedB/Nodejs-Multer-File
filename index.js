@@ -31,18 +31,14 @@ app.use(express.static(__dirname + "/public"));
 
 app.use("/uploads", express.static("uploads"));
 
+app.get("/status", function (req, res) {
+  res.json({ data: "", message: "Health is up" });
+});
+
 app.get("/getfiles", (req, res) => {
   const allFiles = dirTree("./uploads", { attributes: ["size", "mtime"] });
   res.json(allFiles);
 });
-
-app.post(
-  "/profile-upload-single",
-  upload.single("profile-file"),
-  function (req, res, next) {
-    return res.json({ data: "", message: "File uploaded" });
-  }
-);
 
 app.get("/deletefiles", function (req, res) {
   const directory = "./uploads";
@@ -58,15 +54,19 @@ app.get("/deletefiles", function (req, res) {
   res.json({ data: "", message: "All file deleted" });
 });
 
-app.get("/up", function (req, res) {
-  res.json({ data: "", message: "Health is up" });
-});
-
 app.post(
   "/profile-upload-multiple",
   upload.array("profile-files", 12),
   function (req, res, next) {
     res.json({ data: "", message: "Health is up" });
+  }
+);
+
+app.post(
+  "/profile-upload-single",
+  upload.single("profile-file"),
+  function (req, res, next) {
+    return res.json({ data: "", message: "File uploaded" });
   }
 );
 
