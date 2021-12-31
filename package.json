@@ -1,5 +1,5 @@
 {
-  "name": "gfg",
+  "name": "node-uploader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "directory-tree": "^3.0.1",
     "express": "^4.17.1",
     "multer": "^1.4.2"
   }
